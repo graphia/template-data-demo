@@ -1,4 +1,3 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -10,34 +9,34 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Prototype your service using GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+        Apply for a juggling licence
       </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+
+      <p class="govuk-body">
+        Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+      </p>
+
+      <p class="govuk-body">
+        Oficia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi
+        Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat
+        excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est
+        aliquip amet voluptate voluptate dolor minim nulla est proident.
       </p>
 
       <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+        Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt
+        ex occaecat reprehenderit commodo officia dolor Lorem duis laboris
+        cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi
+        laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit
+        commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint
+        cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
       </p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+      {{ govukButton({
+        text: "Start now",
+        href: "/register/which-objects",
+        isStartButton: true
+      }) }}
     </div>
   </div>
 
