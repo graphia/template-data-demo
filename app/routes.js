@@ -37,4 +37,18 @@ router.post('/register/how-many-objects', function callback(request, response) {
   response.redirect('/register/complete');
 });
 
+router.get('/register/complete', function callback(request, response) {
+  console.debug("complete!")
+
+  console.debug("session data:", request.session.data);
+
+  // now we've answered two questions we can summarise both in the panel text variable, or pass
+  // the individual values out to the template individually:
+  response.render('register/complete', {
+    panel_text: `You can now officially juggle ${request.session.data["how-many"]} ${request.session.data["which-object"]} at once.`,
+    which_object: request.session.data["which-object"],
+    how_many: request.session.data["how-many"],
+  });
+});
+
 module.exports = router

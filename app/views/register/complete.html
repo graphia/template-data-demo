@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Complete
+{% endblock %}
+
+{% block content %}
+
+  {{ govukPanel({
+    titleText: "Application complete",
+    text: panel_text
+  }) }}
+
+  <!-- we can pull variables passed in to render directly into the template too -->
+  <p class="govuk-body govuk-!-margin-top-9">
+  You can find out about the international <strong>{{ which_object | capitalize }} juggling
+    federation</strong> by <a href="#">visiting their website</a>.
+  </p>
+
+  {% if (how_many == "eight-or-more") and (which_object == "daggers") %}
+
+    {{ govukWarningText({
+      text: "Juggling that many daggers at once is extremely dangerous. Proceed with caution",
+      iconFallbackText: "Warning"
+    }) }}
+
+  {% endif %}
+
+{% endblock %}
