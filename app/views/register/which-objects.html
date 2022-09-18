@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which objects?
+{% endblock %}
+
+{% block content %}
+
+  <!-- we're not adding an 'action' attribute to the form here so it will post
+    to the *current path*, in routes.js we have both a get and post for
+    '/register/which-objects -->
+  <form method="post">
+
+    <!-- note that the *name* of this input is "which-object", when we submit
+      this page it'll automatically be saved in `request.session.data` -->
+    {{ govukRadios({
+      idPrefix: "which-object",
+      name: "which-object",
+      fieldset: {
+        legend: {
+          text: "What are you juggling implements of choice?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        { value: "clubs",   text: "Clubs" },
+        { value: "balls",   text: "Balls" },
+        { value: "daggers", text: "Daggers" },
+        { value: "rings",   text: "Rings" }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+  </form>
+
+{% endblock %}

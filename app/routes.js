@@ -1,6 +1,20 @@
 const express = require('express')
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
+router.get('/register/which-objects', function callback(request, response) {
+  console.debug("on the which objects form")
+
+  console.debug("session data:", request.session.data);
+
+  response.render('register/which-objects');
+});
+
+router.post('/register/which-objects', function callback(request, response) {
+  console.debug("submitting which objects page")
+
+  console.debug("session data:", request.session.data);
+
+  response.redirect('/register/how-many-objects');
+});
 
 module.exports = router
