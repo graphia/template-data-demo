@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How many objects?
+{% endblock %}
+
+{% block content %}
+
+  <form method="post" action="">
+    {{ govukRadios({
+      idPrefix: "how-many",
+      name: "how-many",
+      fieldset: {
+        legend: {
+          text: question,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        { value: "one", text: "One" },
+        { value: "two-or-three", text: "Two or three" },
+        { value: "four-to-seven", text: "Four to seven" },
+        { value: "eight-or-more", text: "Eight or more" }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
